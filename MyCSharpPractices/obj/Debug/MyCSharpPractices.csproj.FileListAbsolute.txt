@@ -5,3 +5,7 @@ C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\obj\Debug\MyC
 C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\obj\Debug\MyCSharpPractices.csproj.CoreCompileInputs.cache
 C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\obj\Debug\MyCSharpPractices.exe
 C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\obj\Debug\MyCSharpPractices.pdb
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\bin\Debug\nunit.framework.dll
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\bin\Debug\nunit.framework.pdb
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\bin\Debug\nunit.framework.xml
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\obj\Debug\MyCSharpPractices.csproj.CopyComplete
