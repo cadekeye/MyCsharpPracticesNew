@@ -1,0 +1,7 @@
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\bin\Debug\MyCSharpPractices.exe.config
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\bin\Debug\MyCSharpPractices.exe
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\bin\Debug\MyCSharpPractices.pdb
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\obj\Debug\MyCSharpPractices.csprojAssemblyReference.cache
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\obj\Debug\MyCSharpPractices.csproj.CoreCompileInputs.cache
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\obj\Debug\MyCSharpPractices.exe
+C:\Users\cadekeye\source\repos\MyCSharpPractices\MyCSharpPractices\obj\Debug\MyCSharpPractices.pdb
