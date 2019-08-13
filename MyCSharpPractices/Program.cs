@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace MyCSharpPractices
 {
@@ -175,6 +175,129 @@ namespace MyCSharpPractices
             second.NextSong = first;
 
             Console.WriteLine(first.IsRepeatingPlaylist());
+        }
+    }
+
+    public class TextInput {
+        private string value;
+        public virtual void Add(char c) {
+            value += c;
+        }
+
+        public string GetValue() {
+            return value;
+        }
+    }
+
+    public class NumericInput : TextInput{
+        public override void Add(char c) {
+            if (int.TryParse(c.ToString(), out var intvalue)) {
+                base.Add(c);
+            }
+        }
+    }
+
+    public class Account
+    {
+        public double Balance { get; private set; }
+        public double OverdraftLimit { get; private set; }
+
+        public Account(double overdraftLimit)
+        {
+            this.OverdraftLimit = overdraftLimit > 0 ? overdraftLimit : 0;
+            this.Balance = 0;
+        }
+
+        public bool Deposit(double amount)
+        {
+            if (amount >= 0)
+            {
+                this.Balance += amount;
+                return true;
+            }
+            return false;
+        }
+
+        public bool Withdraw(double amount)
+        {
+            if (this.Balance - amount >= -this.OverdraftLimit && amount >= 0)
+            {
+                this.Balance -= amount;
+                return true;
+            }
+            return false;
+        }
+    }
+
+
+    [TestFixture]
+    public class Tester
+    {
+        private double epsilon = 1e-6;
+
+        [Test]
+        public void AccountCannotHaveNegativeOverdraftLimit()
+        {
+            Account account = new Account(-20);
+
+            Assert.AreEqual(0, account.OverdraftLimit, epsilon);
+        }
+
+        [Test]
+        public void DepositAndWithdrawCannotAcceptNegative()
+        {
+            //arrange
+            double overdraftLimit = 100;
+            Account account = new Account(overdraftLimit);
+
+            //act
+            double amount = -20;
+            bool actual = account.Deposit(amount);
+            bool withdrawActual = account.Withdraw(amount);
+
+            //assert
+            Assert.AreEqual(false, actual);
+            Assert.AreEqual(false, withdrawActual);
+        }
+
+        [Test]
+        public void AccountCannotOverstepItsOverdraft() {
+            Account account = new Account(100);
+
+            bool actual = account.Withdraw(200);
+
+            Assert.AreEqual(false, actual);
+        }
+
+        [Test]
+        public void DepositAndWithdrawWillDepositCorrectAmount() {
+            Account account = new Account(100);
+
+            double deposit = 150;
+            account.Deposit(deposit);
+
+            double withdraw = 50;
+            account.Withdraw((withdraw));
+
+            double expectedBalance = 100;
+
+            Assert.AreEqual(expectedBalance, account.Balance);
+        }
+
+        [Test]
+        public void DepositAndWithdrawReturnsCorrectResults()
+        {
+            Account account = new Account(100);
+
+            double deposit = 150;
+            bool depositActual = account.Deposit(deposit);
+
+            double withdraw = 50;
+            bool withdrawActual = account.Withdraw((withdraw));
+
+
+            Assert.AreEqual(true, depositActual);
+            Assert.AreEqual(true, withdrawActual);
         }
     }
 }
